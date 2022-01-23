@@ -1,4 +1,4 @@
-pipeline {
+node {
   stage('Checkout SCM') {
     git branch: 'SP2', url: 'https://github.com/beard-developer/angualr-test-01.git'
   }
