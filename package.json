@@ -3,10 +3,19 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --host=localhost --port=4200 --open",
     "build": "ng build",
+    "build:prod": "ng build --configuration production --aot",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "lint": "ng lint",
+    "lint:fix": "ng lint --fix",
+    "lint:html": "htmlhint --config .htmlhintrc src/app/**/*.html",
+    "lint:styles": "stylelint src/app/**/*.scss",
+    "format:prettier": "pretty-quick --staged",
+    "format:all": "run-s lint:styles lint:fix lint:html format:prettier",
+    "test": "ng test --code-coverage",
+    "test:once": "ng test --watch=false",
+    "test:ci": "ng test --watch=false --browsers=ChromeHeadlessCI --code-coverage"
   },
   "private": true,
   "dependencies": {
