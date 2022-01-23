@@ -1,6 +1,6 @@
 node {
   stage('Checkout SCM') {
-    git branch: 'SP2', url: 'https://github.com/beard-developer/angualr-test-01.git'
+    git branch: 'main', url: 'https://github.com/beard-developer/angualr-test-01.git'
   }
 
   stage('Install node modules') {
