@@ -4,14 +4,10 @@ node {
   }
 
   stage('Install node modules') {
-    bat "npm install"
+    bat "yarn install"
   }
 
   stage('Build') {
-    bat "npm run build:prod"
-  }
-
-  stage('Deploy') {
-    bat "pm2 restart all"
+    bat "yarn build:prod"
   }
 }
