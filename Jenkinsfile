@@ -4,10 +4,10 @@ node {
   }
 
   stage('Install node modules') {
-    bat "yarn install"
+    sh "yarn install"
   }
 
   stage('Build') {
-    bat "yarn build:prod"
+    sh "yarn build:prod"
   }
 }
