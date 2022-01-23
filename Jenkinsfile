@@ -4,14 +4,14 @@ node {
   }
 
   stage('Install node modules') {
-    sh "npm install"
+    bat "npm install"
   }
 
   stage('Build') {
-    sh "npm build"
+    bat "npm build"
   }
 
   stage('Deploy') {
-    sh "pm2 restart all"
+    bat "pm2 restart all"
   }
 }
